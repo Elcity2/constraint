@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuidePercent="0.5" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuidePercent="0.5" />
+
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="dca,mars" />
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_50897"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <Button
+        android:id="@+id/dca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/DCA"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@id/arrow"
+        app:layout_constraintEnd_toStartOf="@id/arrow"
+        app:layout_constraintTop_toTopOf="@id/arrow"
+        app:layout_constraintHorizontal_bias="1.0"/>
+
+    <Button
+        android:id="@+id/mars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/MARS"
+        android:textSize="30sp"
+        android:background="@color/blue"
+        app:layout_constraintBottom_toBottomOf="@id/arrow"
+        app:layout_constraintStart_toEndOf="@id/arrow"
+        app:layout_constraintTop_toTopOf="@id/arrow"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <ImageView
+        android:id="@+id/station"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_station"
+        app:layout_constraintBottom_toTopOf="@id/dca"
+        app:layout_constraintEnd_toEndOf="@id/dca"
+        app:layout_constraintStart_toStartOf="@id/dca"/>
+
+    <ImageView
+        android:id="@+id/flight"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="7dp"
+        android:src="@drawable/ic_flight"
+        app:layout_constraintBottom_toTopOf="@id/arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:id="@+id/rovers"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_rovers"
+        app:layout_constraintBottom_toTopOf="@id/mars"
+        app:layout_constraintEnd_toEndOf="@id/mars"
+        app:layout_constraintStart_toStartOf="@id/mars"/>
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="one way"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/dca"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/traveller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/traveller"
+        app:layout_constraintTop_toBottomOf="@id/a"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
